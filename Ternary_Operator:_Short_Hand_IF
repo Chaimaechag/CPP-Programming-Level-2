@@ -1,0 +1,25 @@
+/**
+ * Description: Demonstrates the use of nested ternary operators 
+ * to evaluate conditions concisely.
+ */
+
+#include <iostream>
+#include <string> // Always good practice to include string library
+
+using namespace std;
+
+int main()
+{
+    // 1. Variable Initialization
+    int number = 1;
+    string result;
+
+    // 2. Logic Evaluation using Nested Ternary Operator
+    // Format: (Condition 1) ? True1 : (Condition 2) ? True2 : False2
+    result = (number == 0) ? "Zero" : (number > 0) ? "Positive" : "Negative";
+
+    // 3. Output the result
+    cout << "The number " << number << " is " << result << "." << endl;
+
+    return 0;
+}
