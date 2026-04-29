@@ -1,0 +1,44 @@
+/**
+ * Program: Function Overloading Demonstration
+ * Description: Demonstrates the ability to define multiple functions with the 
+ * same name but different parameters (type and count).
+ */
+
+#include <iostream>
+
+using namespace std;
+
+// Overload 1: Handles double (floating-point) numbers
+double MySum(double a, double b)
+{
+    return a + b;
+}
+
+// Overload 2: Handles two integers
+int MySum(int k, int w)
+{
+    return k + w;
+}
+
+// Overload 3: Handles three integers
+int MySum(int a, int b, int c)
+{
+    return a + b + c;
+}
+
+// Overload 4: Handles four integers
+int MySum(int a, int b, int c, int d)
+{
+    return a + b + c + d;
+}
+
+int main()
+{
+    // The compiler automatically chooses the correct version based on arguments
+    cout << "Sum (doubles): " << MySum(10.2, 3.2) << endl; // Calls Overload 1
+    cout << "Sum (2 ints): " << MySum(10, 4) << endl;     // Calls Overload 2
+    cout << "Sum (3 ints): " << MySum(10, 4, 5) << endl;  // Calls Overload 3
+    cout << "Sum (4 ints): " << MySum(10, 4, 5, 6) << endl; // Calls Overload 4
+
+    return 0;
+}
