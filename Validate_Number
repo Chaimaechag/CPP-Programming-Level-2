@@ -1,0 +1,26 @@
+/**
+ * Function: ReadPositiveNumber
+ * ---------------------------
+ * Advanced validation that ensures the input is both a valid integer
+ * and a positive value (e.g., for Age or Salary).
+ */
+int ReadPositiveNumber()
+{
+    int number;
+    cout << "Please enter your age: ";
+    cin >> number;
+
+    // The loop continues if:
+    // 1. cin.fail() -> User entered a string/char
+    // 2. number < 0 -> User entered a negative age
+    while (cin.fail() || number < 0)
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        
+        cout << "Invalid input! Please enter a positive number: ";
+        cin >> number;
+    }
+
+    return number;
+}
