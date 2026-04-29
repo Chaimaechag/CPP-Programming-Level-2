@@ -1,0 +1,60 @@
+/**
+ * Program: Call Stack & Hierarchy Demonstration
+ * Level: 2 (Logic & Memory Management)
+ * Description: This program illustrates how functions call each other
+ * and how the CPU manages the execution order using the "Call Stack".
+ */
+
+#include <iostream>
+
+using namespace std;
+
+// --- Function Prototypes ---
+void function1();
+void function2();
+void function3();
+void function4();
+
+/**
+ * Main Execution Block
+ * The Call Stack starts here with main().
+ */
+int main()
+{
+    cout << "--- Starting Call Stack Demo ---" << endl;
+
+    // Initial call
+    function1();
+
+    cout << "--- Program Finished Successfully ---" << endl;
+    return 0;
+}
+
+// --- Function Definitions ---
+
+void function1()
+{
+    cout << "Entering function1..." << endl;
+    function2(); // Pushing function2 onto the stack
+    cout << "Exiting function1." << endl;
+}
+
+void function2()
+{
+    cout << "  Entering function2..." << endl;
+    function3(); // Pushing function3 onto the stack
+    cout << "  Exiting function2." << endl;
+}
+
+void function3()
+{
+    cout << "    Entering function3..." << endl;
+    function4(); // Pushing function4 onto the stack
+    cout << "    Exiting function3." << endl;
+}
+
+void function4()
+{
+    // This is the "Leaf" function (Top of the stack)
+    cout << "      Hi, I am function4! I am at the top of the stack." << endl;
+}
