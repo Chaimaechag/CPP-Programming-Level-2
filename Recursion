@@ -1,0 +1,48 @@
+/**
+ * Program: Recursion Deep Dive
+ * Features:
+ * 1. Recursive Counting (Tail Recursion)
+ * 2. Power Calculation (Value-Returning Recursion)
+ */
+
+#include <iostream>
+using namespace std;
+
+// Function Prototypes
+void printnmber(int m, int n);
+int MyPower(int base, int power);
+
+int main()
+{
+    cout << "--- Counting Down ---" << endl;
+    printnmber(10, 1);
+
+    cout << "\n--- Calculating Power ---" << endl;
+    // 2 raised to the power of 8
+    cout << "Result: " << MyPower(2, 8) << endl; 
+
+    return 0;
+}
+
+// Function to print numbers from m down to n
+void printnmber(int m, int n)
+{
+    if (m >= n)
+    {
+        cout << m << endl;
+        printnmber(m - 1, n); // Recursive call
+    }
+}
+
+// Function to calculate base^power using recursion
+int MyPower(int base, int power)
+{ 
+    // Base Case: Any number to the power of 0 is 1
+    if (power == 0)
+        return 1;
+    else
+    {
+        // Recursive step: Multiply base by the result of (base^(power-1))
+        return (base * MyPower(base, power - 1));
+    }
+}
