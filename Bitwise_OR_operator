@@ -1,0 +1,17 @@
+/**
+ * Program: Bitwise AND Demonstration
+ * Description: Shows how the bitwise AND operator (&) compares 
+ * the binary representations of two integers.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    // The bitwise AND of 12 (01100) and 25 (11001) results in 8 (01000)
+    cout << "Result: " << (12 & 25) << endl;
+    
+    return 0;
+}
