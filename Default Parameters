@@ -1,0 +1,36 @@
+/**
+ * Program: Default Parameters Demonstration
+ * Description: Shows how to use default arguments in C++ functions to 
+ * handle varying numbers of inputs without function overloading.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+/**
+ * Function: MySum
+ * ----------------
+ * Calculates the sum of up to 4 integers.
+ * @param a, b: Mandatory parameters.
+ * @param c, d: Optional parameters (default to 0).
+ * @return: The total sum of the provided numbers.
+ */
+int MySum(int a, int b, int c = 0, int d = 0)
+{
+    return (a + b + c + d);
+}
+
+int main()
+{
+    // Calling with 2 arguments (c and d will be 0)
+    cout << "Sum (2 nums): " << MySum(10, 20) << endl;
+
+    // Calling with 3 arguments (d will be 0)
+    cout << "Sum (3 nums): " << MySum(10, 20, 30) << endl;
+
+    // Calling with all 4 arguments
+    cout << "Sum (4 nums): " << MySum(10, 20, 30, 40) << endl;
+
+    return 0;
+}
