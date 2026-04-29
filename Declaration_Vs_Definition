@@ -1,0 +1,33 @@
+/**
+ * Program: Modular Addition Function
+ * Description: Demonstrates the use of function prototypes and 
+ * separating function definition from the main execution block.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+// --- Function Prototype ---
+// This tells the compiler: "There is a function named 'add' that takes two integers."
+void add(int a, int b);
+
+int main()
+{
+    // Calling the function with arguments 2 and 3
+    add(2, 3);
+
+    return 0;
+}
+
+/**
+ * Function: add
+ * -------------
+ * Takes two integer parameters, calculates their sum, 
+ * and prints the result to the console.
+ */
+void add(int a, int b)
+{
+    int sum = a + b; // Using a variable makes the code easier to debug
+    cout << "The sum is: " << sum << endl;
+}
