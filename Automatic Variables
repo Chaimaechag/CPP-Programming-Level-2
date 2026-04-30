@@ -1,0 +1,26 @@
+/**
+ * Program: Automatic Type Deduction (auto)
+ * Level: 2 (Modern C++ Features)
+ * Description: Demonstrates how the compiler deduces data types 
+ * at compile-time using the 'auto' keyword.
+ */
+
+#include <iostream>
+#include <typeinfo> // Required to see the type names
+
+using namespace std;
+
+int main()
+{
+    // The compiler deduces types based on the initializer
+    auto age = 22;              // Deducted as int
+    auto salary = 1250.50;      // Deducted as double
+    auto name = "Chaymae";      // Deducted as const char*
+
+    cout << "--- Type Deduction Demo ---" << endl;
+    cout << "Value of a: " << age << " | Type: " << typeid(age).name() << endl;
+    cout << "Value of b: " << salary << " | Type: " << typeid(salary).name() << endl;
+    cout << "Value of c: " << name << " | Type: " << typeid(name).name() << endl;
+
+    return 0;
+}
