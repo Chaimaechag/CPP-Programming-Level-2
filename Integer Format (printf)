@@ -1,0 +1,32 @@
+/**
+ * Program: Advanced Output Formatting
+ * Description: Demonstrates professional string formatting techniques 
+ * using printf for padding, alignment, and dynamic width.
+ */
+
+#include <iostream>
+#include <cstdio> // Required for printf
+
+using namespace std;
+
+int main()
+{
+    int page = 1; 
+    int TotalPages = 10;
+
+    cout << "--- Standard Formatting ---" << endl;
+    printf("Page %d of %d \n", page, TotalPages);
+
+    cout << "\n--- Advanced Formatting (Padding & Alignment) ---" << endl;
+
+    // 1. Zero-padding with dynamic width (00001)
+    printf("Formatted (Zero-padded): %0*d\n", 5, page);
+
+    // 2. Right-aligned with fixed width of 5
+    printf("Formatted (Right-aligned): %5d \n", page);
+
+    // 3. Left-aligned with fixed width of 5
+    printf("Formatted (Left-aligned):  %-5d page \n", page);
+
+    return 0;
+}
