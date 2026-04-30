@@ -1,0 +1,26 @@
+
+
+#include <iostream>
+#include <cstdio> 
+
+using namespace std;
+
+int main() {
+    // String Formatting
+    char name[] = "Chaymae"; 
+    char targetCountry[] = "Germany"; // Reference to your 2027 goal
+    
+    printf("Hello %s, your goal is to start your Ausbildung in %s.\n\n", name, targetCountry);
+
+    // Character Alignment Demonstration
+    char keyChar = 's';
+    cout << "--- Dynamic Width Padding ---" << endl;
+    
+    // The '*' takes the integer argument to set the field width
+    printf("Width (1): '%*c'\n", 1, keyChar);
+    printf("Width (2): '%*c'\n", 2, keyChar);
+    printf("Width (3): '%*c'\n", 3, keyChar);
+    printf("Width (4): '%*c'\n", 4, keyChar);
+
+    return 0;
+}
