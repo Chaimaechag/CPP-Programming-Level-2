@@ -1,9 +1,5 @@
 /**
- * Project: Advanced Floating-Point Formatting in C++
- * Developer: Chaymae (شيماء)
- * Location: Fes, Morocco
- * Date: April 2026
- * 
+
  * Description: 
  * This program demonstrates professional techniques for controlling floating-point 
  * precision using the <cstdio> library. It covers dynamic precision specification, 
