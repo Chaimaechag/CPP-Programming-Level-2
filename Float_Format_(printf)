@@ -1,0 +1,54 @@
+/**
+ * Project: Advanced Floating-Point Formatting in C++
+ * Developer: Chaymae (شيماء)
+ * Location: Fes, Morocco
+ * Date: April 2026
+ * 
+ * Description: 
+ * This program demonstrates professional techniques for controlling floating-point 
+ * precision using the <cstdio> library. It covers dynamic precision specification, 
+ * rounding behaviors during arithmetic operations, and double-to-string padding.
+ */
+
+#include <iostream>
+#include <cstdio> // Required for printf formatting functions
+
+using namespace std;
+
+/**
+ * Main function to execute precision demonstrations.
+ */
+int main() {
+    // ---------------------------------------------------------
+    // 1. Dynamic Precision Specification (The Asterisk '*' Method)
+    // ---------------------------------------------------------
+    float PI = 3.14159265f;
+    cout << "--- Dynamic Precision Demonstration ---\n";
+    
+    // The '.*' allow us to pass the precision as an argument
+    printf("Precision level (1): %.*f\n", 1, PI);
+    printf("Precision level (2): %.*f\n", 2, PI);
+    printf("Precision level (3): %.*f\n", 3, PI);
+    printf("Precision level (4): %.*f\n", 4, PI);
+
+    // ---------------------------------------------------------
+    // 2. Arithmetic Precision & Automatic Rounding
+    // ---------------------------------------------------------
+    float x = 7.0f, y = 9.0f;
+    cout << "\n--- Arithmetic Division & Rounding ---\n";
+    
+    // Demonstrating how printf rounds the result (e.g., 0.777... becomes 0.778)
+    printf("Equation: %.3f / %.3f = %.3f\n", x, y, x / y);
+
+    // ---------------------------------------------------------
+    // 3. Double-Precision Padding
+    // ---------------------------------------------------------
+    double d = 12.45;
+    cout << "\n--- Value Padding (Float/Double) ---\n";
+    
+    // Adding trailing zeros to reach the specified precision
+    printf("Double value (3 decimals): %.3f\n", d); // Result: 12.450
+    printf("Double value (4 decimals): %.4f\n", d); // Result: 12.4500
+
+    return 0;
+}
