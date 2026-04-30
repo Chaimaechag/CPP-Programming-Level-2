@@ -1,0 +1,37 @@
+/**
+ * Program: Static Variables Demonstration
+ * Level: 2 (Memory Management)
+ * Description: Illustrates how 'static' variables persist in memory 
+ * throughout the program's lifetime, unlike standard local variables.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+/**
+ * Function: counter
+ * ----------------
+ * Uses a static variable to keep track of how many times 
+ * the function has been called.
+ */
+void counter()
+{
+    // Initialized only once when the program starts
+    static int callCount = 1; 
+
+    cout << "Function call number: " << callCount << endl;
+
+    // The value is preserved for the next call
+    callCount++; 
+}
+
+int main()
+{
+    // Calling the function multiple times
+    counter(); // Output: 1
+    counter(); // Output: 2
+    counter(); // Output: 3
+
+    return 0;
+}
