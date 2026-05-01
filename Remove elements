@@ -1,0 +1,45 @@
+/**
+ * Project: Vector Memory Management
+ * Concepts: pop_back(), empty(), size() vs capacity()
+ */
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> vNumbers;
+
+    // Adding 5 elements
+    vNumbers.push_back(10);
+    vNumbers.push_back(20);
+    vNumbers.push_back(30);
+    vNumbers.push_back(40);
+    vNumbers.push_back(50);
+
+    cout << "--- Initial State ---" << endl;
+    cout << "Number of elements (size): " << vNumbers.size() << endl;
+    cout << "Reserved memory (capacity): " << vNumbers.capacity() << endl;
+
+    // Removing elements one by one
+    vNumbers.pop_back();
+    vNumbers.pop_back();
+    vNumbers.pop_back();
+    vNumbers.pop_back();
+
+    // Safety check before the final pop
+    if (!vNumbers.empty()) {
+        vNumbers.pop_back();
+    }
+
+    cout << "\n--- After pop_back() operations ---" << endl;
+    cout << "Final size: " << vNumbers.size() << endl;
+    cout << "Final capacity: " << vNumbers.capacity() << " (Memory is still reserved!)" << endl;
+
+    // Pro-tip: To truly free memory, you can use shrink_to_fit()
+    vNumbers.shrink_to_fit();
+    cout << "Capacity after shrink_to_fit: " << vNumbers.capacity() << endl;
+
+    return 0;
+}
