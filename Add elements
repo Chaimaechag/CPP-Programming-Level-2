@@ -1,0 +1,51 @@
+/**
+ * Project: Dynamic Vector Input & Output
+ * Concepts: Pass-by-Reference, Dynamic Memory (push_back), Loops.
+ */
+
+#include <iostream>
+#include <vector> // Required for std::vector
+#include <cstdio> // Required if using printf
+
+using namespace std;
+
+// Function to populate the vector dynamically
+void genreatdynamicarry(vector<int> &vnumber)
+{
+    char answer = 'Y';
+    int number;
+    while (answer == 'Y' || answer == 'y')
+    {
+        cout << "Please enter a number: ";
+        cin >> number;
+        vnumber.push_back(number);
+        
+        cout << "Do you want to enter more? (y/n): ";
+        cin >> answer;
+    }
+}
+
+// Function to display the vector elements
+// Pro-tip: Using 'const' and '&' prevents unnecessary copying
+void printarry(const vector<int> &vnumber)
+{
+    cout << "\nThe numbers in the vector are: ";
+    for (int number : vnumber)
+    {
+        cout << number << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    vector<int> vnumber;
+    
+    // Process input
+    genreatdynamicarry(vnumber);
+    
+    // Process output
+    printarry(vnumber);
+    
+    return 0;
+}
