@@ -1,0 +1,80 @@
+/**
+ * Project: Employee Record Management System
+ * Concepts: Structs, Dynamic Vectors, and Pass-by-Reference.
+ * 
+ * Description: 
+ * A professional implementation of a data entry system using C++ structs.
+ * Optimized for memory efficiency using const references during output.
+ */
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// 1. Data Structure Definition
+struct stEmployee
+{
+    string firstName;
+    string lastName;
+    int salary;
+};
+
+// 2. Data Entry Function
+// We use void because the vector is updated directly via reference
+void registerEmployees(vector<stEmployee> &vEmployees)
+{
+    char addMore = 'y';
+    stEmployee tempEmployee;
+
+    while (tolower(addMore) == 'y')
+    {
+        cout << "\n--- Enter Employee Information ---" << endl;
+        
+        cout << "First Name: ";
+        cin >> tempEmployee.firstName;
+
+        cout << "Last Name: ";
+        cin >> tempEmployee.lastName;
+
+        cout << "Annual Salary: ";
+        cin >> tempEmployee.salary;
+
+        // Adding the struct to the dynamic array
+        vEmployees.push_back(tempEmployee);
+
+        cout << "\nDo you want to add another employee? (y/n): ";
+        cin >> addMore;
+    }
+}
+
+// 3. Data Display Function
+// 'const' ensures the data isn't modified, '&' avoids expensive copies
+void printEmployeeReport(const vector<stEmployee> &vEmployees)
+{
+    cout << "\n========================================" << endl;
+    cout << "           EMPLOYEE REPORT              " << endl;
+    cout << "========================================" << endl;
+
+    for (const stEmployee &employee : vEmployees)
+    {
+        cout << "Name: " << employee.firstName << " " << employee.lastName << endl;
+        cout << "Salary: $" << employee.salary << endl;
+        cout << "----------------------------------------" << endl;
+    }
+}
+
+int main()
+{
+    // Initialize the dynamic list of employees
+    vector<stEmployee> vEmployees;
+
+    // Process data entry
+    registerEmployees(vEmployees);
+
+    // Generate output report
+    printEmployeeReport(vEmployees);
+
+    return 0;
+}
