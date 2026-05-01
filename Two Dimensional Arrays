@@ -1,0 +1,41 @@
+/**
+ * Description: 
+ * This program generates a 10x10 grid representing a multiplication table.
+ * It uses a 2D array for storage and zero-padded formatting for clean output.
+ */
+
+#include <iostream>
+#include <cstdio> // Required for printf formatting
+
+using namespace std;
+
+int main()
+{
+    // 1. Declare a 2D array (10 rows, 10 columns)
+    int grid[10][10];
+
+    // 2. Populate the 2D array with multiplication values
+    for (int row = 0; row < 10; row++)
+    {
+        for (int col = 0; col < 10; col++)
+        {
+            // Adding 1 because array indices start at 0
+            grid[row][col] = (row + 1) * (col + 1);
+        }
+    }
+
+    cout << "--- 10x10 Multiplication Grid ---" << endl;
+
+    // 3. Print the array with formatted output
+    for (int row = 0; row < 10; row++)
+    {
+        for (int col = 0; col < 10; col++)
+        {
+            // Dynamic width of 2, zero-padded (e.g., 01, 02... 10)
+            printf("%0*d ", 2, grid[row][col]);
+        }
+        cout << endl; // Move to the next row
+    }
+
+    return 0;
+}
