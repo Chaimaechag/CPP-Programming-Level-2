@@ -1,0 +1,32 @@
+/**
+ * Project: Introduction to STL Vectors & Range-Based Loops
+ * Concept: Dynamic Arrays, Pass-by-Reference, Modern C++ (C++11)
+ * 
+ * Description: 
+ * This program demonstrates the use of std::vector as a modern alternative 
+ * to raw arrays. It utilizes a range-based for loop with a reference (&) 
+ * to iterate through elements efficiently.
+ */
+
+#include <iostream>
+#include <vector> // Required for dynamic arrays (std::vector)
+
+using namespace std;
+
+int main()
+{
+    // 1. Initializing a dynamic vector
+    vector<int> vnumber = {10, 20, 30, 40, 50};
+
+    cout << "--- Vector Elements ---" << endl;
+    cout << "Original data: ";
+    
+    // 2. Range-based for loop using reference (&) for efficiency
+    for (int &number : vnumber)
+    {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
