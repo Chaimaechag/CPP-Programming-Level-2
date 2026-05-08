@@ -1,0 +1,28 @@
+/*
+ * Concept: References vs Pointers 
+ */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    int b = 20;
+
+    // --- REFERENCE (The Alias) ---
+    int& x = a; // x is now a nickname for a
+    cout << "Addresses are IDENTICAL: " << &a << " == " << &x << endl;
+
+    // --- POINTER (The Messenger) ---
+    int* p = &a; // p stores address of a
+    cout << "p is pointing to a: " << *p << endl;
+
+    // --- REDIRECTING THE POINTER ---
+    p = &b; // Now p points to b
+    cout << "p is now pointing to b: " << *p << endl;
+    
+    // Note: You can't do "x = &b" because x IS a. 
+    // Doing x = b would just change a's value to 20!
+
+    return 0;
+}
