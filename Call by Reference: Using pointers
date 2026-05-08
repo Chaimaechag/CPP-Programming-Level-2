@@ -1,0 +1,31 @@
+/**
+ * Concept: Pass-by-Pointer (Direct Memory Access)
+ */
+
+#include <iostream>
+
+using namespace std;
+
+// Using Pointers to modify the actual memory of the caller
+void SwapByPointer(int *ptr1, int *ptr2)
+{
+    int temp = *ptr1; // Save value at first address
+    *ptr1 = *ptr2;    // Move value from second to first address
+    *ptr2 = temp;     // Put saved value into second address
+}
+
+int main() 
+{
+    int a = 1, b = 2;
+
+    cout << "--- Before Swapping ---" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    // We MUST pass the addresses using '&'
+    SwapByPointer(&a, &b);
+
+    cout << "\n--- After Swapping ---" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
