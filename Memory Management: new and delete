@@ -1,0 +1,36 @@
+/**
+ * Concepts: new, delete, heap memory, and pointer safety.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // 1. Allocating memory on the Heap
+    int* ptrX = new int;
+    float* ptrY = new float;
+
+    // 2. Checking if memory was allocated successfully (Pro-tip)
+    if (ptrX == nullptr || ptrY == nullptr) {
+        return 1; // Exit if memory allocation failed
+    }
+
+    // 3. Storing values
+    *ptrX = 45;
+    *ptrY = 58.35f;
+
+    cout << "Value in ptrX: " << *ptrX << endl;
+    cout << "Value in ptrY: " << *ptrY << endl;
+
+    // 4. IMPORTANT: Freeing the memory
+    delete ptrX;
+    delete ptrY;
+
+    // 5. Best Practice: Set pointers to nullptr after deletion
+    // This prevents "Dangling Pointers"
+    ptrX = nullptr;
+    ptrY = nullptr;
+
+    return 0;
+}
