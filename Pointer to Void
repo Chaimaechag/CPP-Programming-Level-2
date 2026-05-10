@@ -1,0 +1,32 @@
+/**
+ * Purpose: Understanding how void* can point to different data types
+ * and using static_cast for safe type conversion.
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // 1. Declare a void (generic) pointer
+    void *ptr;
+
+    float fNum = 3.14f;
+    int iNum = 10;
+
+    cout << "--- Stage 1: Handling Float ---" << endl;
+    ptr = &fNum; // Linking void pointer to a float address
+    cout << "Address of F1: " << ptr << endl;
+    
+    // Casting void* to float* to retrieve the value
+    cout << "Value of F1  : " << *(static_cast<float*>(ptr)) << endl;
+
+    cout << "\n--- Stage 2: Handling Integer ---" << endl;
+    ptr = &iNum; // Reusing the SAME pointer for an int address
+    cout << "Address of X : " << ptr << endl;
+    
+    // Casting void* to int* to retrieve the value
+    cout << "Value of X   : " << *(static_cast<int*>(ptr)) << endl;
+
+    return 0;
+}
