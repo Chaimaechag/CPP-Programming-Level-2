@@ -1,0 +1,54 @@
+/**
+ * * Concept: Linking a pointer to a struct instance to avoid unnecessary data copying 
+ * and to allow direct memory manipulation.
+ */
+
+#include <iostream>
+#include <string>
+#include <iomanip> // For formatting output
+
+using namespace std;
+
+// Defining a structure to hold employee information
+struct stInfo {
+    string Name;
+    float Salary;
+};
+
+int main() {
+    // 1. Static allocation of a struct variable
+    stInfo employee;
+    
+    // 2. Initializing the struct members
+    employee.Name = "Chaimae Chag";
+    employee.Salary = 1450.90f;
+
+    // 3. Pointer Declaration
+    // We declare a pointer of type 'stInfo' to store the memory address of our struct
+    stInfo *ptr;
+
+    // 4. THE KEY STEP: Referencing
+    // We link the pointer to the memory address of 'employee'
+    ptr = &employee;
+
+    cout << "========================================" << endl;
+    cout << "      EMPLOYEE MANAGEMENT SYSTEM        " << endl;
+    cout << "========================================" << endl;
+
+    // Accessing via the Object directly (Dot Operator)
+    cout << "[Direct Access]" << endl;
+    cout << "Name   : " << employee.Name << endl;
+    cout << "Salary : $" << fixed << setprecision(2) << employee.Salary << endl;
+
+    cout << "----------------------------------------" << endl;
+
+    // Accessing via the Pointer (Arrow Operator)
+    // Pro-tip: ptr->Name is equivalent to (*ptr).Name
+    cout << "[Pointer Access]" << endl;
+    cout << "Name   : " << ptr->Name << endl;
+    cout << "Salary : $" << ptr->Salary << endl;
+
+    cout << "========================================" << endl;
+
+    return 0;
+}
